@@ -1,0 +1,21 @@
+.contactList,.list,.item,.name,.number,.button{
+   display: flex;
+   flex-direction: row;
+}
+.list{
+   flex-direction: column;
+}
+.item{
+   align-items: flex-start; 
+}
+.name{
+   margin: 0 10px 10px 0;
+   width: 120px;
+}
+.number{
+   margin: 0 10px 10px 0;
+   width: 70px;
+}
+.button{
+   width: 70px;
+}

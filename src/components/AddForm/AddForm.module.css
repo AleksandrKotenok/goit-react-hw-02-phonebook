@@ -1,0 +1,15 @@
+.addForm,.form,.label,.input,.button{
+   display: flex;
+   flex-direction: column;
+}
+.form{
+   flex-direction: row;
+   margin-bottom: 10px;
+}
+.label{
+   width: 50px;
+}
+.button{
+width: 100px;
+margin-left: 50px;
+}
