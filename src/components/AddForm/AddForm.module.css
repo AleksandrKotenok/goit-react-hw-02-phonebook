@@ -1,17 +1,25 @@
 .addForm,.form,.label,.input,.button{
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
 }
 .form{
-   flex-direction: row;
+   flex-direction: column;
    margin-bottom: 10px;
+   margin-left: 70px;
 }
 .label{
    width: 50px;
+   flex-direction: row;
+}
+.input{
+   display: flex;
+   flex-direction: row;
+
 }
 .button{
 width: 85px;
 margin-left: 50px;
+margin-top: 10px;
 border-radius: 5px;
 border: solid 1px;
 border-color: rgb(116, 116, 117);

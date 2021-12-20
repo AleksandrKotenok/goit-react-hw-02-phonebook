@@ -13,30 +13,24 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
-  };
-  inputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
   };
 
-  submit = () => {
+  submit = ({ name, number }) => {
     const existingName = this.state.contacts.find(
-      contact => contact.name === this.state.name,
+      contact => contact.name === name,
     );
     if (existingName) {
-      alert(`${this.state.name} existing name`);
+      alert(`${name} existing name`);
       return;
     }
     const newRecord = {
       id: nanoid(),
-      name: this.state.name,
-      number: this.state.number,
+      name,
+      number,
     };
     this.setState(({ contacts }) => ({
       contacts: [newRecord, ...contacts],
     }));
-    this.setState({ name: '', number: '' });
   };
   updateContacts = () => {
     return this.state.contacts.filter(contact =>
@@ -48,18 +42,19 @@ class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
+  filterChange = e => {
+    this.setState({
+      filter: e.currentTarget.value,
+    });
+  };
 
   render() {
     return (
       <Fragment>
         <h1>Phonebook</h1>
-        <AddForm
-          submit={this.submit}
-          input={this.inputChange}
-          value={this.state}
-        />
+        <AddForm submit={this.submit} />
         <h2>Contacts</h2>
-        <Filter filter={this.state.filter} input={this.inputChange} />
+        <Filter filter={this.state.filter} input={this.filterChange} />
         <ContactList
           updatedContacts={this.updateContacts()}
           deleteContact={this.deleteContact}
