@@ -23,6 +23,7 @@ margin-top: 10px;
 border-radius: 5px;
 border: solid 1px;
 border-color: rgb(116, 116, 117);
+cursor: pointer;
 }
 .button:focus,.button:hover{
    background-color: rgb(81, 81, 251);
